@@ -11,7 +11,6 @@ export DISPLAY=:0
 gsettings set org.gnome.Vino enabled true
 gsettings set org.gnome.Vino prompt-enabled false
 gsettings set org.gnome.Vino require-encryption false
-/usr/lib/vino/vino-server
 ```
 
 ## open vino VNC Server in Ubuntu 16.04
