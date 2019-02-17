@@ -5,7 +5,8 @@ zypper install -y yast2-nfs-server multipath-tools
 ```
 
 ## configuring multipath devices
-![Structure of disks with multipath devices in the system](images/disks.png "Structure of disks with multipath devices in the system")
+![configured disks with yast disk tool](images/yastdisk.png "configured disks with yast disk tool")
+![Structure of disks with multipath devices in the system](images/lsblk.png "Structure of disks with multipath devices in the system")
 
 ## configuring NFS Server
 ```
