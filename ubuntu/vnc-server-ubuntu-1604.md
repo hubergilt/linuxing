@@ -17,3 +17,4 @@ gsettings set org.gnome.Vino require-encryption false
 ```
 /usr/lib/vino/vino-server
 ```
+
