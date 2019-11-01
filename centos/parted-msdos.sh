@@ -22,7 +22,7 @@ parted /dev/sdb mkpart extended 4G 20G
 PARTS=$(seq 5 21)
 #loop for make partition, format, create dir and mount
 for PART in ${PARTS};
-do parted /dev/sdb mkpart primary ext4 $((${PART}-1))G ${PART}G;
+do parted /dev/sdb mkpart logical ext4 $((${PART}-1))G ${PART}G;
    mkfs.ext4 /dev/sdb${PART};
    [ ! -d /data$((${PART}-1)) ] && mkdir /data$((${PART}-1));
    mount /dev/sdb${PART} /data$((${PART}-1));
