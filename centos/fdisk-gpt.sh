@@ -26,6 +26,7 @@ ${PART}
 +1GB
 w
 EOF
+done;
 
 partprobe
 
