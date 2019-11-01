@@ -7,7 +7,7 @@ wipefs -a /dev/sdb
 
 #create gpt partition table
 fdisk /dev/sdb <<EOF
-g
+o
 w
 EOF
 
@@ -16,20 +16,25 @@ EOF
 # mount /dev/sdb1 /data1;
 
 #define number of partitions
-PARTS=$(seq 1 20)
+PARTS=$(seq 1 3)
 #loop for make partition
 for PART in ${PARTS};
 do fdisk /dev/sdb << EOF
 n
+p
 ${PART}
 
 +1GB
 w
 EOF
 
-partprobe
+done;
 
-#format, create dir and mount
+
+
+
+
+partprobe
 
 for PART in ${PARTS};
 do  mkfs.ext4 /dev/sdb${PART};
