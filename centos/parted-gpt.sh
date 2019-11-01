@@ -1,3 +1,7 @@
+an all exiting partitions
+#!/bin/bash
+#umount data* directories
+umount /data*
 #!/bin/bash
 #clean all exiting partitions
 wipefs -a /dev/sdb
