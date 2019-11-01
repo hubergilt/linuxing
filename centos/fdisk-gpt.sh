@@ -17,7 +17,7 @@ w
 EOF
 
 #define number of partitions
-PARTS=$(seq 2 3)
+PARTS=$(seq 2 2)
 #loop for make partition
 for PART in ${PARTS};
 do fdisk /dev/sdb << EOF
