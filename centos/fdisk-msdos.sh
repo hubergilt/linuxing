@@ -53,7 +53,7 @@ w
 EOF
 done;
 
-#partprobe
+partprobe
 
 #define number of partitions
 PARTS=$(seq 1 3)
