@@ -1,4 +1,6 @@
 #!/bin/bash
+#umount data* directories
+umount /data*
 #clean all exiting partitions
 wipefs -a /dev/sdb
 #create partition table
