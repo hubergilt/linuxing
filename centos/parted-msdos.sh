@@ -14,7 +14,7 @@ do parted /dev/sdb mkpart primary ext4 $((${PART}-1))G ${PART}G;
 done;
 
 #make extented partition
-parted /dev/sdb mkpart extended ext4 4G 20G
+parted /dev/sdb mkpart extended 4G 20G
 
 #define numer of partitions
 PARTS=$(seq 4 20)
