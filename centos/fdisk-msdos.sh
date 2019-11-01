@@ -52,11 +52,11 @@ ${PART}
 w
 EOF
 done;
-    
+
 #partprobe
     
-# for PART in ${PARTS};
-# do  mkfs.ext4 /dev/sdb${PART};
-#     [ ! -d /data${PART} ] && mkdir /data${PART};
-#     mount /dev/sdb${PART} /data${PART};
-# done;
+for PART in ${PARTS};
+do  mkfs.ext4 /dev/sdb${PART};
+    [ ! -d /data${PART} ] && mkdir /data${PART};
+    mount /dev/sdb${PART} /data${PART};
+done;
