@@ -62,7 +62,8 @@ done;
 
 #partprobe
 
-
+#define number of partitions
+PARTS=$(seq 4 20)
 #create directory and mount
 for PART in ${PARTS};
 do  mkfs.ext4 /dev/sdb$((${PART}+1));
