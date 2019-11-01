@@ -18,7 +18,7 @@ for PART in ${PARTS};
 do fdisk /dev/sdb << EOF
 n
 p
-${PARTS}
+
 
 +1GB
 w
