@@ -33,3 +33,5 @@ mkfs.ext4 /dev/sdb${PART};
 mount /dev/sdb${PART} /data${PART};
 
 done;
+
+partprobe
