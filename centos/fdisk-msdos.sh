@@ -39,14 +39,24 @@ e
 w
 EOF
 
-
-
-
-
-#partprobe
-
+#define number of partitions
+PARTS=$(seq 5 21)
+#loop for make partition
 for PART in ${PARTS};
-do  mkfs.ext4 /dev/sdb${PART};
-    [ ! -d /data${PART} ] && mkdir /data${PART};
-    mount /dev/sdb${PART} /data${PART};
+do fdisk /dev/sdb << EOF
+n
+l
+${PART}
+
++1GB
+w
+EOF
 done;
+    
+#partprobe
+    
+# for PART in ${PARTS};
+# do  mkfs.ext4 /dev/sdb${PART};
+#     [ ! -d /data${PART} ] && mkdir /data${PART};
+#     mount /dev/sdb${PART} /data${PART};
+# done;
