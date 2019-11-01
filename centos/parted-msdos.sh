@@ -18,7 +18,7 @@ done;
 #make extented partition 4
 parted /dev/sdb mkpart extended 3G 20G
 
-#define numer of partitions
+#define number of partitions
 PARTS=$(seq 3 20)
 #loop for make partition, format, create dir and mount
 for PART in ${PARTS};
