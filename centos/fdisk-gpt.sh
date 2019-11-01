@@ -6,7 +6,7 @@ umount /data*
 wipefs -a /dev/sdb
 
 #create gpt partition table
-fdisk /dev/sdb << EOF
+fdisk /dev/sdb <<EOF
 g
 w
 EOF
