@@ -8,17 +8,12 @@ wipefs -a /dev/sdb
 #create gpt partition table
 fdisk /dev/sdb <<EOF
 g
-n
-p
-1
-
-+1GB
 w
 EOF
 
-mkfs.ext4 /dev/sdb1;
-[ ! -d /data1 ] && mkdir /data1};
-mount /dev/sdb1 /data1;
+# mkfs.ext4 /dev/sdb1;
+# [ ! -d /data1 ] && mkdir /data1};
+# mount /dev/sdb1 /data1;
 
 #define number of partitions
 PARTS=$(seq 2 2)
@@ -26,7 +21,7 @@ PARTS=$(seq 2 2)
 for PART in ${PARTS};
 do fdisk /dev/sdb << EOF
 n
-$((${PART}+1))
+${PART}
 
 +1GB
 w
