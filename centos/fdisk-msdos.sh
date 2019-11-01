@@ -29,6 +29,13 @@ w
 EOF
 done;
 
+#create directory and mount
+for PART in ${PARTS};
+do  mkfs.ext4 /dev/sdb${PART};
+    [ ! -d /data${PART} ] && mkdir /data${PART};
+    mount /dev/sdb${PART} /data${PART};
+done;
+
 #define extended partition number 4
 fdisk /dev/sdb << EOF
 n
@@ -54,9 +61,11 @@ EOF
 done;
 
 #partprobe
-    
+
+
+#create directory and mount
 for PART in ${PARTS};
-do  mkfs.ext4 /dev/sdb${PART};
+do  mkfs.ext4 /dev/sdb$((${PART}+1));
     [ ! -d /data${PART} ] && mkdir /data${PART};
-    mount /dev/sdb${PART} /data${PART};
+    mount /dev/sdb$((${PART}+1)) /data${PART};
 done;
