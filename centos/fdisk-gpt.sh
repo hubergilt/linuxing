@@ -24,7 +24,7 @@ w
 EOF
 done;
 
-partprobe
+partprobe /dev/sdb
 
 #format, create dir and mount
 
