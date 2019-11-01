@@ -8,16 +8,20 @@ wipefs -a /dev/sdb
 #create gpt partition table
 fdisk /dev/sdb <<EOF
 g
+n
+p
+1
+
++1GB
 w
 EOF
 
 #define number of partitions
-PARTS=$(seq 1 2)
+PARTS=$(seq 2 3)
 #loop for make partition
 for PART in ${PARTS};
 do fdisk /dev/sdb << EOF
 n
-p
 
 
 +1GB
