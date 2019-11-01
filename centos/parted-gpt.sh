@@ -1,4 +1,3 @@
-an all exiting partitions
 #!/bin/bash
 #umount data* directories
 umount /data*
