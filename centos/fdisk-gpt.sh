@@ -11,10 +11,6 @@ g
 w
 EOF
 
-# mkfs.ext4 /dev/sdb1;
-# [ ! -d /data1 ] && mkdir /data1};
-# mount /dev/sdb1 /data1;
-
 #define number of partitions
 PARTS=$(seq 1 20)
 #loop for make partition

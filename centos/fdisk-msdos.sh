@@ -27,14 +27,23 @@ ${PART}
 +1GB
 w
 EOF
-
 done;
 
+#define extended partition number 4
+fdisk /dev/sdb << EOF
+n
+e
+4
+
+
+w
+EOF
 
 
 
 
-partprobe
+
+#partprobe
 
 for PART in ${PARTS};
 do  mkfs.ext4 /dev/sdb${PART};
