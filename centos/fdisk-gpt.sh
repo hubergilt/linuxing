@@ -16,7 +16,7 @@ EOF
 # mount /dev/sdb1 /data1;
 
 #define number of partitions
-PARTS=$(seq 2 2)
+PARTS=$(seq 1 20)
 #loop for make partition
 for PART in ${PARTS};
 do fdisk /dev/sdb << EOF
